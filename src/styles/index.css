@@ -1,0 +1,87 @@
+/* ---------------------------------------------------
+   Design tokens
+   Palette: forest green + sage + warm cream/brown,
+   nature-inspired per the project brief.
+   Type: Fraunces (organic display serif) + Inter (body)
+--------------------------------------------------- */
+:root {
+  --forest: #2f5233;
+  --forest-dark: #1e3a22;
+  --sage: #6f9c73;
+  --sage-light: #a8c6a5;
+  --mint-bg: #f1f6ee;
+  --cream: #f8f3e8;
+  --brown: #a67c52;
+  --brown-light: #d9c4a3;
+  --coral: #e0704f;
+  --coral-light: #fbe6df;
+  --white: #ffffff;
+  --text-dark: #26362a;
+  --text-muted: #647063;
+  --border-soft: #e2e9dd;
+  --shadow-soft: 0 4px 16px rgba(47, 82, 51, 0.08);
+  --shadow-lift: 0 10px 28px rgba(47, 82, 51, 0.16);
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--mint-bg);
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--forest-dark);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

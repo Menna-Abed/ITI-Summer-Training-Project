@@ -1,0 +1,75 @@
+// Starter plants shown the very first time someone opens the app
+// (before they've added anything of their own). Dates are written
+// so the dashboard opens with a realistic, believable mix of
+// "Healthy" and "Needs Water" plants.
+
+const defaultPlants = [
+  {
+    id: 'plant-default-1',
+    name: 'Snake Plant',
+    icon: '🌿',
+    category: 'Indoor',
+    lightRequirement: 'Low',
+    wateringFrequency: 14,
+    lastWatered: '2026-08-09',
+    notes: 'Very forgiving. Keep away from direct sunlight and let the soil dry out fully between waterings.',
+    favorite: true,
+  },
+  {
+    id: 'plant-default-2',
+    name: 'Aloe Vera',
+    icon: '🪴',
+    category: 'Indoor',
+    lightRequirement: 'High',
+    wateringFrequency: 21,
+    lastWatered: '2026-08-01',
+    notes: 'Loves bright, indirect light. The gel inside the leaves is great for minor burns.',
+    favorite: false,
+  },
+  {
+    id: 'plant-default-3',
+    name: 'Cactus',
+    icon: '🌵',
+    category: 'Outdoor',
+    lightRequirement: 'High',
+    wateringFrequency: 21,
+    lastWatered: '2026-07-20',
+    notes: 'Thrives in full sun. Overwatering is the most common way to lose a cactus.',
+    favorite: false,
+  },
+  {
+    id: 'plant-default-4',
+    name: 'Peace Lily',
+    icon: '🌸',
+    category: 'Indoor',
+    lightRequirement: 'Medium',
+    wateringFrequency: 7,
+    lastWatered: '2026-08-18',
+    notes: 'Drooping leaves are a clear sign it needs water. Enjoys a humid spot like a bathroom.',
+    favorite: true,
+  },
+  {
+    id: 'plant-default-5',
+    name: 'Monstera',
+    icon: '🍃',
+    category: 'Indoor',
+    lightRequirement: 'Medium',
+    wateringFrequency: 10,
+    lastWatered: '2026-08-14',
+    notes: 'Wipe the big leaves occasionally so they can breathe. Loves a moss pole to climb.',
+    favorite: false,
+  },
+  {
+    id: 'plant-default-6',
+    name: 'Spider Plant',
+    icon: '🌱',
+    category: 'Outdoor',
+    lightRequirement: 'Medium',
+    wateringFrequency: 7,
+    lastWatered: '2026-08-17',
+    notes: 'Produces little "babies" you can snip off and repot. Great for beginners.',
+    favorite: false,
+  },
+]
+
+export default defaultPlants
