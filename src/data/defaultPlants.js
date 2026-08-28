@@ -13,7 +13,7 @@
   {
     id: 'plant-default-2',
     name: 'Aloe Vera',
-    icon: '🪴',
+    icon: '🥬',
     category: 'Indoor',
     lightRequirement: 'High',
     wateringFrequency: 21,
