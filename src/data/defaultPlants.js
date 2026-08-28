@@ -1,9 +1,4 @@
-// Starter plants shown the very first time someone opens the app
-// (before they've added anything of their own). Dates are written
-// so the dashboard opens with a realistic, believable mix of
-// "Healthy" and "Needs Water" plants.
-
-const defaultPlants = [
+ const defaultPlants = [
   {
     id: 'plant-default-1',
     name: 'Snake Plant',
