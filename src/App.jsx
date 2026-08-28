@@ -12,8 +12,6 @@ import { generateId } from './utils/plantUtils'
 const STORAGE_KEY = 'plants'
 
 function App() {
-  // ----- Plants state, loaded from localStorage (or the sample data
-  // the very first time the app is opened) -----
   const [plants, setPlants] = useState(() => {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved) {
@@ -26,15 +24,10 @@ function App() {
     }
     return defaultPlants
   })
-
-  // Simple "router": which page is showing, and which plant id (if any)
-  // that page needs (details/edit pages need to know which plant).
+ 
   const [currentPage, setCurrentPage] = useState('dashboard')
   const [selectedPlantId, setSelectedPlantId] = useState(null)
-
-  // Whenever `plants` changes, write the whole array back to localStorage.
-  // This one effect covers add / edit / delete / water-now, since they
-  // all go through setPlants.
+ 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(plants))
   }, [plants])
