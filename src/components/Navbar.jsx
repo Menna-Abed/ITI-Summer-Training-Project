@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-// Navbar receives the current page and a function to change it as props.
-// It has its own local `menuOpen` state just to control the mobile menu.
+ 
 function Navbar({ currentPage, onNavigate }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
