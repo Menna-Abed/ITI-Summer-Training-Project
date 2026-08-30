@@ -2,9 +2,7 @@ import Stats from '../components/Stats'
 import PlantCard from '../components/PlantCard'
 import { getStatus } from '../utils/plantUtils'
 
-// Dashboard is a "page" component: it receives the full plants array and
-// the handler functions as props from App.jsx, and composes smaller
-// components (Stats, PlantCard) to build the page.
+ 
 function Dashboard({ plants, onWaterNow, onViewDetails, onToggleFavorite, onNavigate }) {
   const total = plants.length
   const needWater = plants.filter((p) => getStatus(p) === 'needs-water').length
