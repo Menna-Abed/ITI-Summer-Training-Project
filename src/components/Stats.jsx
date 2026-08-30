@@ -1,5 +1,4 @@
-// Stats is a "dumb" presentational component: it just receives numbers
-// as props and displays them. All the counting happens in the parent page.
+ 
 function Stats({ total, needWater, healthy }) {
   const cards = [
     { icon: '🌱', label: 'Total Plants', value: total, className: 'stat-total' },
