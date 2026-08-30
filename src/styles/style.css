@@ -1,645 +1,75 @@
-/* ---------------------------------------------------
-   Layout shell
---------------------------------------------------- */
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+ 
+:root {
+  --forest: #2f5233;
+  --forest-dark: #1e3a22;
+  --sage: #6f9c73;
+  --sage-light: #a8c6a5;
+  --mint-bg: #f1f6ee;
+  --cream: #f8f3e8;
+  --brown: #a67c52;
+  --brown-light: #d9c4a3;
+  --coral: #e0704f;
+  --coral-light: #fbe6df;
+  --white: #ffffff;
+  --text-dark: #26362a;
+  --text-muted: #647063;
+  --border-soft: #e2e9dd;
+  --shadow-soft: 0 4px 16px rgba(47, 82, 51, 0.08);
+  --shadow-lift: 0 10px 28px rgba(47, 82, 51, 0.16);
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-.main-content {
-  flex: 1;
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 32px 24px 64px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.page-narrow {
-  max-width: 640px;
-  margin: 0 auto;
+html {
+  scroll-behavior: smooth;
 }
 
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  border-top: 1px solid var(--border-soft);
-  background: var(--white);
-}
-
-/* ---------------------------------------------------
-   Navbar
---------------------------------------------------- */
-.navbar {
-  background: var(--white);
-  border-bottom: 1px solid var(--border-soft);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-.navbar-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 14px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--forest-dark);
-}
-
-.navbar-brand-icon {
-  font-size: 1.5rem;
-}
-
-.navbar-links {
-  display: flex;
-  gap: 4px;
-}
-
-.navbar-link {
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-weight: 500;
-  color: var(--text-muted);
-  transition: background 0.18s ease, color 0.18s ease;
-}
-
-.navbar-link:hover {
+body {
+  font-family: var(--font-body);
   background: var(--mint-bg);
-  color: var(--forest-dark);
+  color: var(--text-dark);
+  line-height: 1.5;
+ 
 }
 
-.navbar-link-active {
-  background: var(--forest);
-  color: var(--white);
-}
-
-.navbar-link-active:hover {
-  background: var(--forest-dark);
-  color: var(--white);
-}
-
-.navbar-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
-}
-
-.navbar-toggle span {
-  width: 22px;
-  height: 2px;
-  background: var(--forest-dark);
-  border-radius: 2px;
-}
-
-@media (max-width: 720px) {
-  .navbar-toggle {
-    display: flex;
-  }
-
-  .navbar-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    flex-direction: column;
-    padding: 8px 16px 16px;
-    border-bottom: 1px solid var(--border-soft);
-    display: none;
-    box-shadow: var(--shadow-soft);
-  }
-
-  .navbar-links-open {
-    display: flex;
-  }
-
-  .navbar-link {
-    width: 100%;
-    text-align: left;
-  }
-}
-
-/* ---------------------------------------------------
-   Hero + section headers
---------------------------------------------------- */
-.hero {
-  text-align: center;
-  padding: 28px 16px 8px;
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3rem);
-  margin-bottom: 8px;
-}
-
-.hero p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin: 32px 0 16px;
-  flex-wrap: wrap;
-}
-
-.section-header h2 {
-  font-size: 1.6rem;
-}
-
-.page-subtitle {
-  color: var(--text-muted);
-  margin-bottom: 20px;
-  margin-top: -8px;
-}
-
-/* ---------------------------------------------------
-   Stats grid (dashboard)
---------------------------------------------------- */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.stat-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  box-shadow: var(--shadow-soft);
-  border-left: 5px solid var(--sage);
-}
-
-.stat-thirsty {
-  border-left-color: var(--coral);
-}
-
-.stat-healthy {
-  border-left-color: var(--forest);
-}
-
-.stat-icon {
-  font-size: 1.8rem;
-}
-
-.stat-value {
+h1, h2, h3 {
   font-family: var(--font-display);
-  font-size: 1.9rem;
-  font-weight: 700;
   color: var(--forest-dark);
-  line-height: 1;
+  font-weight: 600;
+  line-height: 1.15;
 }
 
-.stat-label {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
-@media (max-width: 640px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---------------------------------------------------
-   Search + Filters
---------------------------------------------------- */
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--white);
-  border: 1px solid var(--border-soft);
-  border-radius: 999px;
-  padding: 10px 18px;
-  margin-bottom: 14px;
-}
-
-.search-bar input {
-  flex: 1;
+button {
+  font-family: inherit;
+  cursor: pointer;
   border: none;
   background: none;
-  outline: none;
-  color: var(--text-dark);
 }
 
-.search-clear {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.filter-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-
-.filter-btn {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--border-soft);
-  background: var(--white);
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.18s ease;
-}
-
-.filter-btn:hover {
-  border-color: var(--sage);
-  color: var(--forest-dark);
-}
-
-.filter-btn-active {
-  background: var(--sage);
-  border-color: var(--sage);
-  color: var(--white);
-}
-
-/* ---------------------------------------------------
-   Plant grid + cards
---------------------------------------------------- */
-.plant-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.plant-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid transparent;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.plant-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lift);
-}
-
-.plant-card-thirsty {
-  border-color: var(--coral-light);
-}
-
-.plant-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.plant-card-icon {
-  font-size: 2.2rem;
-}
-
-.favorite-btn {
-  font-size: 1.3rem;
-  color: var(--brown-light);
-  transition: transform 0.15s ease;
-}
-
-.favorite-btn:hover {
-  transform: scale(1.15);
-}
-
-.favorite-btn-active {
-  color: #e0a72f;
-}
-
-.plant-card-name {
-  font-size: 1.25rem;
-}
-
-.plant-card-category {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: -6px;
-}
-
-.plant-card-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 0.9rem;
-  color: var(--text-dark);
-}
-
-/* Signature element: a "growth bar" that fills toward the next
-   watering day, like a stem growing across the card. */
-.growth-bar-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 2px;
-}
-
-.growth-bar-track {
-  width: 100%;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--mint-bg);
-  overflow: hidden;
-}
-
-.growth-bar-fill {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--sage) 0%, var(--coral) 100%);
-  transition: width 0.3s ease;
-}
-
-.growth-bar-label {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-.status-badge {
-  align-self: flex-start;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.status-healthy {
-  background: #e5f2e3;
-  color: var(--forest);
-}
-
-.status-thirsty {
-  background: var(--coral-light);
-  color: var(--coral);
-}
-
-.plant-card-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: auto;
-  padding-top: 6px;
-}
-
-/* ---------------------------------------------------
-   Buttons
---------------------------------------------------- */
-.btn {
-  padding: 10px 16px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: transform 0.15s ease, background 0.18s ease, box-shadow 0.18s ease;
-  white-space: nowrap;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-}
-
-.btn-primary {
-  background: var(--forest);
-  color: var(--white);
-  flex: 1;
-}
-
-.btn-primary:hover {
-  background: var(--forest-dark);
-  box-shadow: 0 6px 14px rgba(47, 82, 51, 0.25);
-}
-
-.btn-secondary {
-  background: var(--mint-bg);
-  color: var(--forest-dark);
-  flex: 1;
-  border: 1px solid var(--border-soft);
-}
-
-.btn-secondary:hover {
-  background: var(--sage-light);
-}
-
-.btn-danger {
-  background: var(--coral-light);
-  color: var(--coral);
-}
-
-.btn-danger:hover {
-  background: var(--coral);
-  color: var(--white);
-}
-
-.btn-full {
-  width: 100%;
-  margin-top: 8px;
-}
-
-/* ---------------------------------------------------
-   Empty state
---------------------------------------------------- */
-.empty-state {
-  text-align: center;
-  background: var(--white);
-  border: 1px dashed var(--border-soft);
-  border-radius: var(--radius-lg);
-  padding: 48px 20px;
-  color: var(--text-muted);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
-
-.empty-state .btn {
-  flex: none;
-}
-
-/* ---------------------------------------------------
-   Forms (Add / Edit Plant)
---------------------------------------------------- */
-.plant-form {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-field label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--forest-dark);
-}
-
-.form-field input,
-.form-field select,
-.form-field textarea {
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-sm);
-  padding: 10px 14px;
-  background: var(--mint-bg);
-  color: var(--text-dark);
-}
-
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-  border-color: var(--sage);
-  background: var(--white);
-}
-
-.form-field textarea {
-  resize: vertical;
-}
-
-.form-error {
-  color: var(--coral);
-  font-size: 0.82rem;
-}
-
-/* ---------------------------------------------------
-   Plant details page
---------------------------------------------------- */
-.link-back {
-  color: var(--sage);
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.link-back:hover {
-  color: var(--forest);
-}
-
-.details-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.details-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.details-icon {
-  font-size: 3rem;
-}
-
-.details-header h1 {
-  font-size: 1.9rem;
-}
-
-.details-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  padding: 18px 0;
-  border-top: 1px solid var(--border-soft);
-  border-bottom: 1px solid var(--border-soft);
-}
-
-.details-grid dt {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-}
-
-.details-grid dd {
-  font-weight: 600;
-  color: var(--forest-dark);
-}
-
-.details-notes h3 {
+input, select, textarea {
+  font-family: inherit;
   font-size: 1rem;
-  margin-bottom: 6px;
 }
 
-.details-notes p {
-  color: var(--text-dark);
+a {
+  color: inherit;
 }
 
-.details-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 2px;
 }
-
-.details-actions .btn {
-  flex: 1;
-  min-width: 130px;
-}
-
-@media (max-width: 480px) {
-  .details-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---------------------------------------------------
-   Care Tips page
---------------------------------------------------- */
-.tips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 18px;
-}
-
-.tip-card {
-  background: var(--cream);
-  border-radius: var(--radius-lg);
-  padding: 22px;
-  border: 1px solid var(--brown-light);
-}
-
-.tip-icon {
-  font-size: 1.8rem;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.tip-title {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
-}
-
-.tip-text {
-  color: var(--text-dark);
-  font-size: 0.92rem;
-}
+ 
