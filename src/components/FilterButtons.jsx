@@ -1,7 +1,7 @@
 const FILTERS = ['All', 'Indoor', 'Outdoor', 'Needs Water', 'Healthy']
 
-// activeFilter and onFilterChange are passed down from the Plants page,
-// so this component doesn't need any state of its own.
+ 
+ 
 function FilterButtons({ activeFilter, onFilterChange }) {
   return (
     <div className="filter-buttons">
