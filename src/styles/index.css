@@ -1,9 +1,4 @@
-/* ---------------------------------------------------
-   Design tokens
-   Palette: forest green + sage + warm cream/brown,
-   nature-inspired per the project brief.
-   Type: Fraunces (organic display serif) + Inter (body)
---------------------------------------------------- */
+ 
 :root {
   --forest: #2f5233;
   --forest-dark: #1e3a22;
@@ -43,7 +38,7 @@ body {
   background: var(--mint-bg);
   color: var(--text-dark);
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+ 
 }
 
 h1, h2, h3 {
@@ -77,11 +72,4 @@ textarea:focus-visible,
   outline: 3px solid var(--sage);
   outline-offset: 2px;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+ 
