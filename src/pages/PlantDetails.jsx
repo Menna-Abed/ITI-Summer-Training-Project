@@ -1,8 +1,7 @@
 import { getNextWateringDate, getStatus, formatDate } from '../utils/plantUtils'
 
 function PlantDetails({ plant, onWaterNow, onDelete, onNavigate }) {
-  // Conditional rendering: if the plant was deleted or the id is bad,
-  // show a friendly message instead of crashing on `plant.name`.
+   
   if (!plant) {
     return (
       <div className="page page-narrow">
