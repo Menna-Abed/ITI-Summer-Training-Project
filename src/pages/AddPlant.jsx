@@ -6,7 +6,7 @@ function AddPlant({ onAddPlant }) {
   function handleSubmit(formValues) {
     const newPlant = {
       ...formValues,
-      id: undefined, // filled in by the parent (App.jsx) when saving
+      id: undefined,  
       icon: ICONS_BY_LIGHT[formValues.lightRequirement] || '🌱',
       favorite: false,
     }
