@@ -1,5 +1,4 @@
-// A controlled input: its value always comes from the parent's state
-// (searchTerm), and every keystroke reports back up via onSearch.
+ 
 function SearchBar({ searchTerm, onSearch }) {
   return (
     <div className="search-bar">
