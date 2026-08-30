@@ -5,9 +5,7 @@ import {
   wateringProgress,
 } from '../utils/plantUtils'
 
-// PlantCard only receives data and callback props — it never touches
-// localStorage or the plants array directly. The parent page owns the
-// data; this component just renders it and reports clicks.
+ 
 function PlantCard({ plant, onWaterNow, onViewDetails, onToggleFavorite }) {
   const status = getStatus(plant)
   const isThirsty = status === 'needs-water'
@@ -34,8 +32,7 @@ function PlantCard({ plant, onWaterNow, onViewDetails, onToggleFavorite }) {
         <span>💧 Every {plant.wateringFrequency} days</span>
       </div>
 
-      {/* Signature element: a "growth bar" that fills up like a stem
-          growing toward the next watering day. */}
+      
       <div className="growth-bar-wrap">
         <div className="growth-bar-track">
           <div
