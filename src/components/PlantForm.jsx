@@ -9,10 +9,7 @@ const EMPTY_FORM = {
   notes: '',
 }
 
-// One shared form for both "Add Plant" and "Edit Plant". `initialData`
-// pre-fills the fields when editing; `submitLabel` changes the button text.
-// All the field state lives here (controlled inputs), and the finished
-// plant object is only handed to the parent when the form is submitted.
+ 
 function PlantForm({ initialData, onSubmit, submitLabel = 'Add Plant' }) {
   const [formData, setFormData] = useState(initialData || EMPTY_FORM)
   const [errors, setErrors] = useState({})
